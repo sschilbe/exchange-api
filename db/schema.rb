@@ -10,6 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_12_21_232848) do
+
+  create_table "exchanges", force: :cascade do |t|
+    t.string "code"
+    t.decimal "rate"
+    t.index ["code"], name: "index_exchanges_on_code", unique: true
+  end
 
 end
